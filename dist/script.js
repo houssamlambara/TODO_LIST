@@ -32,3 +32,21 @@ document.getElementById('taskForm').addEventListener('submit', (e) => {
     document.getElementById('modal').classList.add('hidden');
     document.getElementById('taskForm').reset();
 });
+
+// Edit task status
+function editStatus(index) {
+    currentTaskIndex = index; // Save the index of the task to be edited
+    document.getElementById('editModal').classList.remove('hidden');
+}
+
+// Change status based on button click
+document.getElementById('toDoButton').addEventListener('click', () => updateStatus('to-do'));
+document.getElementById('doingButton').addEventListener('click', () => updateStatus('doing'));
+document.getElementById('doneButton').addEventListener('click', () => updateStatus('done'));
+
+function updateStatus(newStatus) {
+    tasks[currentTaskIndex].status = newStatus;
+    renderTasks();
+    document.getElementById('editModal').classList.add('hidden');
+}
+

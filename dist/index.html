@@ -14,13 +14,13 @@
         <div class="max-w-6xl mx-auto flex justify-between items-center">
             <h1 class="text-white text-4xl font-bold">TaskFlow</h1>
             <button id="openModal"
-                class="bg-white text-indigo-500 px-6 py-3 rounded-lg shadow hover:bg-indigo-200 ">Ajouter une
+                class="bg-white text-indigo-500 px-6 py-3 rounded-lg shadow hover:bg-indigo-200">Ajouter une
                 tache</button>
         </div>
     </nav>
 
     <div class="max-w-4xl mx-auto p-5">
-        <div class="flex space-x-4">
+        <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
             <div class="flex-1 bg-white rounded-lg shadow-lg p-4 border border-gray-300">
                 <h2 id="toDoHeader" class="text-xl font-bold mb-2 text-indigo-600 text-center">To Do (0)</h2>
                 <ul id="toDoList" class="space-y-3"></ul>
@@ -72,7 +72,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- Modal for editing task status -->
     <div id="editModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden">
