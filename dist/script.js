@@ -1,11 +1,10 @@
-let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+let tasks = []; // Initialize tasks in memory
 let currentTaskIndex = null; // Track the index of the task being edited
 
 // Open modal for adding task
 document.getElementById('openModal').addEventListener('click', () => {
     document.getElementById('modal').classList.remove('hidden');
 });
-
 
 // Close modal for adding task
 document.getElementById('closeModal').addEventListener('click', () => {
@@ -29,7 +28,6 @@ document.getElementById('taskForm').addEventListener('submit', (e) => {
     if (!title) return alert("Le titre ne peut pas être vide.");
 
     tasks.push({ title, description, status, dueDate, priority });
-    saveTasks();
     renderTasks();
     document.getElementById('modal').classList.add('hidden');
     document.getElementById('taskForm').reset();

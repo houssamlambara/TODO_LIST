@@ -22,15 +22,15 @@
     <div class="max-w-4xl mx-auto p-5">
         <div class="flex space-x-4">
             <div class="flex-1 bg-white rounded-lg shadow-lg p-4 border border-gray-300">
-                <h2 class="text-xl font-bold mb-2 text-indigo-600 text-center">To Do</h2>
+                <h2 id="toDoHeader" class="text-xl font-bold mb-2 text-indigo-600 text-center">To Do (0)</h2>
                 <ul id="toDoList" class="space-y-3"></ul>
             </div>
             <div class="flex-1 bg-white rounded-lg shadow-lg p-4 border border-gray-300">
-                <h2 class="text-xl font-bold mb-2 text-indigo-600 text-center">Doing</h2>
+                <h2 id="doingHeader" class="text-xl font-bold mb-2 text-indigo-600 text-center">Doing (0)</h2>
                 <ul id="doingList" class="space-y-3"></ul>
             </div>
             <div class="flex-1 bg-white rounded-lg shadow-lg p-4 border border-gray-300">
-                <h2 class="text-xl font-bold mb-2 text-indigo-600 text-center">Done</h2>
+                <h2 id="doneHeader" class="text-xl font-bold mb-2 text-indigo-600 text-center">Done (0)</h2>
                 <ul id="doneList" class="space-y-3"></ul>
             </div>
         </div>
@@ -48,6 +48,7 @@
                         class="border border-gray-300 p-4 mb-4 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
                     <select id="status"
                         class="border border-gray-300 p-4 mb-4 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <option value="">Select an option</option>
                         <option value="to-do">To do</option>
                         <option value="doing">Doing</option>
                         <option value="done">Done</option>
@@ -57,7 +58,7 @@
                         required>
                     <select id="priority"
                         class="border border-gray-300 p-4 mb-6 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                        <option value=" ">P1</option>
+                        <option value="P1">P1</option>
                         <option value="P2">P2</option>
                         <option value="P3">P3</option>
                     </select>
