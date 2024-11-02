@@ -1,5 +1,5 @@
-let tasks = []; // Initialize tasks in memory
-let currentTaskIndex = null; // Track the index of the task being edited
+let tasks = []; // tache en memoire 
+let currentTaskIndex = null; // Suivre l'index de la tache 
 
 // ouvrir le modal 
 document.getElementById('openModal').addEventListener('click', () => {
@@ -33,13 +33,13 @@ document.getElementById('taskForm').addEventListener('submit', (e) => {
     document.getElementById('taskForm').reset();
 });
 
-// modifier task status
+// modifier le status de task 
 function editStatus(index) {
-    currentTaskIndex = index; // Save the index of the task to be edited
+    currentTaskIndex = index; 
     document.getElementById('editModal').classList.remove('hidden');
 }
 
-// Change status based on button click
+// changer le statue en cliquant  
 document.getElementById('toDoButton').addEventListener('click', () => updateStatus('to-do'));
 document.getElementById('doingButton').addEventListener('click', () => updateStatus('doing'));
 document.getElementById('doneButton').addEventListener('click', () => updateStatus('done'));
@@ -52,11 +52,11 @@ function updateStatus(newStatus) {
 
 // supprimer une task
 function deleteTask(index) {
-    tasks.splice(index, 1);
+    tasks.splice(index, 1); /////
     renderTasks();
 }
 
-// Render tasks
+// metre a jour l'affiche de tasks
 function renderTasks() {
     const lists = {
         'to-do': document.getElementById('toDoList'),
@@ -66,11 +66,11 @@ function renderTasks() {
 
     // Clear all lists
     for (const list of Object.values(lists)) list.innerHTML = '';
-    let taskCounts = { 'to-do': 0, 'doing': 0, 'done': 0 }; // Initialize counts
+    let taskCounts = { 'to-do': 0, 'doing': 0, 'done': 0 };
 
     tasks.forEach((task, index) => {
         const taskItem = document.createElement('li');
-        taskItem.className = 'p-4 rounded mb-4 flex flex-col'; // Changed to flex-col
+        taskItem.className = 'p-4 rounded mb-4 flex flex-col'; 
         taskItem.style.borderWidth = '2px';
         taskItem.style.borderStyle = 'solid';
         taskItem.style.borderColor = getPriorityColor(task.priority);
@@ -82,26 +82,25 @@ function renderTasks() {
 
         taskItem.appendChild(textContainer);
 
-        // Create the button container after the text
         const buttonContainer = document.createElement('div');
-        buttonContainer.className = 'flex flex-col items-center mt-2'; // Added margin top for spacing
+        buttonContainer.className = 'flex flex-col items-center mt-2'; 
         buttonContainer.innerHTML =
             `<button class="text-white bg-indigo-400 px-2 py-1 rounded mb-2 hover:bg-blue-700 transition text-sm" onclick="editStatus(${index})">Modifier</button>
         <button class="text-white bg-red-500 px-2 py-1 rounded hover:bg-red-600 transition text-sm" onclick="deleteTask(${index})">Supprimer</button>`;
         taskItem.appendChild(buttonContainer);
 
         lists[task.status].appendChild(taskItem);
-        taskCounts[task.status]++; // Increment the count for each task
+        taskCounts[task.status]++; // count
     });
 
-    // Update header counts
+    // counts
     document.getElementById('toDoHeader').textContent = `To Do (${taskCounts['to-do']})`;
     document.getElementById('doingHeader').textContent = `Doing (${taskCounts['doing']})`;
     document.getElementById('doneHeader').textContent = `Done (${taskCounts['done']})`;
 }
 
 
-// Get border color based on priority
+// prioriter coleur 
 function getPriorityColor(priority) {
     switch (priority) {
         case 'P1': return 'red';
