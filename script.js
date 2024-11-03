@@ -25,8 +25,27 @@ document.getElementById('taskForm').addEventListener('submit', (e) => {
     const dueDate = document.getElementById('dueDate').value;
     const priority = document.getElementById('priority').value;
 
-    if (!title) return alert("Le titre ne peut pas etre vide.");
-
+    if (title === "") {
+        alert("Le titre ne peut pas etre vide.");
+        return;
+    }
+    if (description === "") {
+        alert("La description ne peut pas etre vide.");
+        return;
+    }
+    if (!status || status === "") {
+        alert("Veuillez selectionner un statut.");
+        return;
+    }
+    if (!dueDate || dueDate === ""){
+        alert("Veuillez selectionner une date");
+        return;
+    }
+    if (!priority || priority === "") {
+        alert("Veuillez selectionner une prioriter.");
+        return;
+    }
+    
     tasks.push({ title, description, status, dueDate, priority });
     renderTasks();
     document.getElementById('modal').classList.add('hidden');
@@ -98,7 +117,6 @@ function renderTasks() {
     document.getElementById('doingHeader').textContent = `Doing (${taskCounts['doing']})`;
     document.getElementById('doneHeader').textContent = `Done (${taskCounts['done']})`;
 }
-
 
 // prioriter coleur 
 function getPriorityColor(priority) {

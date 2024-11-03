@@ -42,7 +42,7 @@
             <div class="bg-purple-200 p-8 rounded-lg shadow-xl max-w-sm w-full">
                 <h2 class="text-3xl mb-6 text-center text-indigo-600 font-bold">Ajouter une tache</h2>
                 <form id="taskForm">
-                    <input type="text" id="title" placeholder="Titre" required
+                    <input type="text" id="title" placeholder="Titre" 
                         class="border border-gray-300 p-4 mb-4 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
                     <textarea id="description" placeholder="Description"
                         class="border border-gray-300 p-4 mb-4 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
@@ -54,10 +54,10 @@
                         <option value="done">Done</option>
                     </select>
                     <input type="date" id="dueDate"
-                        class="border border-gray-300 p-4 mb-4 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                        required>
+                        class="border border-gray-300 p-4 mb-4 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
                     <select id="priority"
                         class="border border-gray-300 p-4 mb-6 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <option value="">Select an option</option>
                         <option value="P1">P1</option>
                         <option value="P2">P2</option>
                         <option value="P3">P3</option>
@@ -100,7 +100,7 @@
             modal.classList.remove('hidden');
         });
 
-        // Fermer le modal
+        // Fermer le modal 
         closeModalButton.addEventListener('click', () => {
             modal.classList.add('hidden');
         });
