@@ -35,7 +35,7 @@ document.getElementById('taskForm').addEventListener('submit', (e) => {
 
 // modifier le status de task 
 function editStatus(index) {
-    currentTaskIndex = index; 
+    currentTaskIndex = index;
     document.getElementById('editModal').classList.remove('hidden');
 }
 
@@ -70,20 +70,20 @@ function renderTasks() {
 
     tasks.forEach((task, index) => {
         const taskItem = document.createElement('li');
-        taskItem.className = 'p-4 rounded mb-4 flex flex-col'; 
+        taskItem.className = 'p-4 rounded mb-4 flex flex-col';
         taskItem.style.borderWidth = '2px';
         taskItem.style.borderStyle = 'solid';
         taskItem.style.borderColor = getPriorityColor(task.priority);
 
         const textContainer = document.createElement('div');
         textContainer.className = 'flex flex-col flex-grow text-center'; // Ajout de 'text-center' pour centrer le texte
-        textContainer.innerHTML = `<strong>${task.title}</strong> ------- <span class="text-gray-600">${task.dueDate}</span>
+        textContainer.innerHTML = `<strong>${task.title}</strong> <span class="text-gray-600">${task.dueDate}</span>
         <p class="text-gray-700 text-sm mt-1">${task.description || 'Pas de description'}</p>`;
 
         taskItem.appendChild(textContainer);
 
         const buttonContainer = document.createElement('div');
-        buttonContainer.className = 'flex flex-col items-center mt-2'; 
+        buttonContainer.className = 'flex flex-col items-center mt-2';
         buttonContainer.innerHTML =
             `<button class="text-white bg-indigo-400 px-2 py-1 rounded mb-2 hover:bg-blue-700 transition text-sm" onclick="editStatus(${index})">Modifier</button>
         <button class="text-white bg-red-500 px-2 py-1 rounded hover:bg-red-600 transition text-sm" onclick="deleteTask(${index})">Supprimer</button>`;
