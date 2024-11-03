@@ -4,10 +4,11 @@ TaskFlow est une application de gestion de taches conçue pour aider les equipes
 
 ## Fonctionnalités
 
-- Liste de taches : Visualisez, ajoutez et supprimez des taches avec des informations essentielles (titre, date d'echeance, priorite).
+- Page d'accueil : Présentation de la To Do List avec HTML, CSS et Tailwind CSS pour un design moderne.
+- Modal d'ajout : Ajout d'une tache avec un formulaire comprenant le titre, description, statut, date d'echeance, et priorité.
+- Liste des taches : Affichage des taches organiser par titre, date d’echeance, et couleur selon la priorité.
 - Gestion des statuts : Changez facilement le statut des taches (To do, Doing, Done).
-- Statistiques de taches : Visualisez le nombre de taches dans chaque statut.
-- LocalStorage : Sauvegarde automatique des donnees pour ne rien perdre.
+- Suppression des taches : Fonction de suppression pour une meilleure gestion de la liste.
 
 ## Technologies Utilisées
 
